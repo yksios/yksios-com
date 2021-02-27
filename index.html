@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>yksios</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
@@ -32,6 +33,50 @@
 
 <body>
 
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;" id="topNavbar">
+
+            <a href="#home" class="w3-bar-item w3-button">yksios</a>
+
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i></a>
+
+            <div class="w3-right w3-hide-small">
+                <a href="#home" class="w3-bar-item w3-button">Inicio</a>
+                <a href="#about" class="w3-bar-item w3-button">Slides</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
+            </div>
+
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="topNavBarSmall" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+
+            <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">Inicio<span
+                    id="homeMenuSmall"></span></a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">Slides<span
+                    id="aboutMenuSmall"></span></a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">Contacto</i><span
+                    id="contactMenuSmall"></span></a>
+
+        </div>
+    </div>
+
+    <script>
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("topNavBarSmall");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+    </script>
 </body>
 
 </html>

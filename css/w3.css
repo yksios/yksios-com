@@ -483,6 +483,7 @@ a {
     border: none;
     display: block;
     outline: 0;
+    font-family: "Old Standard", "Times New Roman";
 }
 .w3-bar .w3-dropdown-click,
 .w3-bar .w3-dropdown-hover {
@@ -501,6 +502,7 @@ a {
     white-space: normal;
     float: none;
     outline: 0;
+    font-family: "Old Standard", "Times New Roman";
 }
 .w3-bar-block.w3-center .w3-bar-item {
     text-align: center;
