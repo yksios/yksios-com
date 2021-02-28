@@ -102,8 +102,9 @@ samp {
 }
 hr {
     box-sizing: content-box;
-    height: 0;
+    height: 1px;
     overflow: visible;
+    background: #616161;
 }
 button,
 input,
