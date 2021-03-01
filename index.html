@@ -28,6 +28,10 @@
             font-family: "Old Standard";
             letter-spacing: 0px;
         }
+
+        .mySlides {
+            display: none;
+        }
     </style>
     <link href="css/gpdr.css" rel="stylesheet">
 </head>
@@ -49,7 +53,7 @@
                 <a href="#home"
                     class="w3-bar-item w3-button w3-padding-16 w3-hover-none w3-border-white w3-bottombar w3-hover-border-black">Inicio</a>
                 <a href="#about"
-                    class="w3-bar-item w3-button w3-padding-16 w3-hover-none w3-border-white w3-bottombar w3-hover-border-black">Slides</a>
+                    class="w3-bar-item w3-button w3-padding-16 w3-hover-none w3-border-white w3-bottombar w3-hover-border-black">Presentación</a>
                 <a href="#contact"
                     class="w3-bar-item w3-button w3-padding-16 w3-hover-none w3-border-white w3-bottombar w3-hover-border-black">Contacto</a>
             </div>
@@ -82,9 +86,21 @@
 
         <!-- Slides -->
         <div id="about" class="w3-container w3-padding-64">
-            <div class="w3-card">
-                <div class="container-iframe">
-                    <iframe class="responsive-iframe" src="presentation/index.html"></iframe>
+            <div class="w3-center">
+                <h1>Presentación</h1>
+                <div class="w3-card">
+                    <div class=" w3-display-container" style="width:100%">
+                        <img class="mySlides" src="slides/slide_01.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_02.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_03.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_04.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_05.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_06.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_07.jpg" style="width:100%">
+                        <img class="mySlides" src="slides/slide_08.jpg" style="width:100%">
+                        <div class="w3-button w3-display-left w3-dark-grey" onclick="plusDivs(-1)">&#10094;</div>
+                        <div class="w3-button w3-display-right w3-dark-grey" onclick="plusDivs(1)">&#10095;</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -205,6 +221,36 @@
             }
         }
 
+    </script>
+
+    <!-- Code to move the slides -->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = 1 }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
     </script>
 </body>
 
